@@ -1,0 +1,18 @@
+python manage.py shell
+
+from python_beltApp.models import *
+
+trip1= Trip.objects.create(name = "Orlando, Florida", creator = User.objects.get(id=1), start = "2020-10-31", end = "2020-11-5", plan = "Go to Disney World")
+
+trip2= Trip.objects.create(name = "Orlando, Florida", creator = User.objects.get(id=1), start = "2020-10-31", end = "2020-11-5", plan = "Go to Disney World")
+
+user1 = User.objects.get(id=1)
+user2 = User.objects.get(id=2)
+
+trip1.travelers.add(user1)
+trip2.travelers.add(user2)
+
+travelers
+
+
+Trip.objects.get(id=1).travelers.add(User.objects.get(id=1))

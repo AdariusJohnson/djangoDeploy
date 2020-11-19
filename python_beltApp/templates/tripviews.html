@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/logout">Logout</a>|
+    <a href="/travels">Back</a>
+    <h1>{{oneTrip.name}}</h1>
+    <h3> Planned by: {{userTrip.first_name}} {{userTrip.last_name}}</h3>
+    <h3>Description: {{oneTrip.plan}}</h3>
+    <h3>Travel Date From: {{oneTrip.start}}</h3>
+    <h3>Travel Date To: {{oneTrip.end}}</h3>
+    <hr>
+    <h1>Other Users Joining the Trip:</h1>
+    {% for userObj in oneTrip.travelers.all %}
+    <p>{{userObj.first_name}} {{userObj.last_name}}</p>
+    {% endfor %}
+</body>
+</html>
